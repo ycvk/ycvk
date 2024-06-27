@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/ycvk"><img src="kita-ikuyo-rap.webp" alt="Banner"></a>
+  <a href="https://github.com/ycvk"><img src="朝光猫少女.png" alt="Banner"></a>
 </p>
 
 <h1 align="center">Welcome to my GitHub profile~ OwO</h1>
