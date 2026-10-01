@@ -28,7 +28,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: stats
-          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"hide":"contribs,issues"}'
+          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
           path: profile/stats-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -46,7 +46,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: stats
-          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"hide":"contribs,issues"}'
+          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
           path: profile/stats-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
