@@ -1,4 +1,4 @@
-name: 更新主页统计卡
+name: 更新主页统计卡与贪吃蛇
 
 on:
   schedule:
@@ -28,7 +28,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: stats
-          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
+          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":false,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
           path: profile/stats-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -37,7 +37,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: top-langs
-          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"Top Languages","layout":"compact","langs_count":6,"hide":"javascript,css,html"}'
+          options: '{"username":"ycvk","bg_color":"FFF8EF","title_color":"96613D","text_color":"60554B","icon_color":"C58B50","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":false,"custom_title":"Top Languages","layout":"compact","langs_count":6,"hide":"javascript,css,html"}'
           path: profile/top-langs-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -46,7 +46,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: stats
-          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
+          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":false,"custom_title":"GitHub Activity","show_icons":true,"hide_rank":true,"line_height":30,"hide":"contribs,issues"}'
           path: profile/stats-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
@@ -55,12 +55,20 @@ jobs:
         uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2
         with:
           card: top-langs
-          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":true,"custom_title":"Top Languages","layout":"compact","langs_count":6,"hide":"javascript,css,html"}'
+          options: '{"username":"ycvk","bg_color":"26211D","title_color":"E7B98A","text_color":"D9CABA","icon_color":"D3A16D","hide_border":true,"border_radius":12,"card_width":360,"disable_animations":false,"custom_title":"Top Languages","layout":"compact","langs_count":6,"hide":"javascript,css,html"}'
           path: profile/top-langs-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
 
-      - name: 保存统计卡
+      - name: 生成贡献贪吃蛇
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ycvk
+          outputs: |
+            profile/snake-light.svg?color_snake=#6B3F22&color_dots=#F2EBE3,#F1D3AE,#E0AD74,#C58B50,#8E5A35
+            profile/snake-dark.svg?color_snake=#FFD9AE&color_dots=#1F1B18,#4A3626,#7A5536,#B5824F,#E7B98A
+
+      - name: 保存统计卡与贪吃蛇
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -68,5 +76,5 @@ jobs:
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "更新主页统计卡"
+          git commit -m "更新主页统计卡与贪吃蛇"
           git push
